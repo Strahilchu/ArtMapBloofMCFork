@@ -1,5 +1,24 @@
 ![ArtMap](http://puu.sh/kRWAF/2c81256338.jpg)
 
+
+# Version 4
+Version 4 is not compatible with version 3's artwork database.  Please export the artwork on version 3 and import it into version 4.
+
+## Features
+* Seperate world to store artwork
+    - This keeps artwork seperate from maps used for treasures and world mapping.
+    - Allows for more ids available for artwork.
+    - Allows for easier restores as the world can be deleted and recreated easily 
+* Maps database changes.
+    - Allows for search terms to be added to artwork. (ex: landscape, windmill, large)
+    - Allows artwork to be grouped for easier lookup and showing of larger paintings
+
+## Release 4.0.0-SNAPSHOT
+* Very early work and will change frequently!
+
+
+# Version 3
+
 ## Release 3.3.11
 * MarriageMaster integration - Prevent players from using gift wen in the Artkit.
 
@@ -80,8 +99,9 @@ User guide at [ArtMap Wiki](https://gitlab.com/BlockStack/ArtMap/wikis/home).
 * List & preview system to view artworks
 
 ### Supported Versions:
-* Spigot 1.14.3, 1.13.2  - Master Branch
-* Spigot 1.8.8 - 1.12.2 - 1.12 Branch
+* Spigot 1.13.2 - 1.15.2  - master 
+* Spigot 1.13.2 - 1.15.2  - release-3.0.0 Branch
+* Spigot 1.8.8 - 1.12.2   - 1.12 Branch
 
 ### Permissions Nodes
 * artmap.artist - allows players to use artmap

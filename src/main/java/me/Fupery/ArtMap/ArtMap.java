@@ -177,11 +177,21 @@ public class ArtMap extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		disabled = true;
-		previewManager.endAllPreviews();
-		artistHandler.stop();
-		menuHandler.closeAll();
-		eventManager.unregisterAll();
-		database.close();
+		if(previewManager != null) {
+			previewManager.endAllPreviews();
+		}
+		if(artistHandler != null) {
+			artistHandler.stop();
+		}
+		if(menuHandler != null) {
+			menuHandler.closeAll();
+		}
+		if(eventManager != null) {
+			eventManager.unregisterAll();
+		}
+		if(database!=null) {
+			database.close();
+		}
 //        recipeLoader.unloadRecipes();
 		reloadConfig();
 		pluginInstance = null;
