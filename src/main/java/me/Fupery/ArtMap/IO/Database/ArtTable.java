@@ -16,11 +16,16 @@ public final class ArtTable extends SQLiteTable {
 
     ArtTable(SQLiteDatabase database) {
         super(database, "artworks", "CREATE TABLE IF NOT EXISTS artworks (" +
-                "title   varchar(32)       NOT NULL UNIQUE," +
-                "id      INT               NOT NULL UNIQUE," +
-                "artist  varchar(32)       NOT NULL," +
-                "date    varchar(32)       NOT NULL," +
-                "PRIMARY KEY (title)" +
+                "title   varchar(32)       ," +             //title is null for in progress works
+                "id      INT               NOT NULL UNIQUE," +  //map id
+                "world   varchar(32)       NOT NULL," +     //world name the art is saved to.
+                "xpos    INT               NOT NULL," +     //x position for a multi artwork
+                "ypos    INT               NOT NULL," +     //y position for a multi artwork.
+                "artist  varchar(32)       NOT NULL," +     //artist uuid
+                "date    varchar(32)       NOT NULL," +     //date created when in progress and changed to saved date
+                "hash    INT               NOT NULL," +     //map data hash
+                "map     BLOB              NOT NULL," +     //map data
+                "PRIMARY KEY (world, id)" +
                 ");");
     }
 
