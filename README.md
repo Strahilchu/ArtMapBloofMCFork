@@ -3,6 +3,7 @@
 ### Supported Versions:
 * Spigot/Paper 1.15.2, 1.14.4, 1.13.2 - Master Branch
 * Spigot/Paper 1.8.8 - 1.12.2 - 1.12 Branch
+>>>>>>> Table updates in progress
 
 ### Features
 * Custom easel entity
