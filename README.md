@@ -1,11 +1,14 @@
 ![ArtMap](http://puu.sh/kRWAF/2c81256338.jpg)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Supported Versions:
 * Spigot/Paper 1.15.2, 1.14.4, 1.13.2 - Master Branch
 * Spigot/Paper 1.8.8 - 1.12.2 - 1.12 Branch
 =======
 
+=======
+>>>>>>> Table updates in progress
 # Version 4
 Version 4 is not compatible with version 3's artwork database.  Please export the artwork on version 3 and import it into version 4.
 
@@ -24,12 +27,15 @@ Version 4 is not compatible with version 3's artwork database.  Please export th
 
 # Version 3
 
+<<<<<<< HEAD
 ## Release 3.3.11
 * MarriageMaster integration - Prevent players from using gift wen in the Artkit.
 
 ## Release 3.3.10
 * Prevent players in artkit from picking up items. Prevents loss of items thrown to a player while they are using artkit.
 
+=======
+>>>>>>> Table updates in progress
 ## Release 3.3.9
 * Disable Map reuse as it might be causing map collisions and blank maps.
 * Add some logging around map initialize to see if it is having problems.
