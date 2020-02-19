@@ -1,6 +1,5 @@
 ![ArtMap](http://puu.sh/kRWAF/2c81256338.jpg)
 
-
 # Version 4
 Version 4 is not compatible with version 3's artwork database.  Please export the artwork on version 3 and import it into version 4.
 
