@@ -24,7 +24,7 @@ import me.Fupery.ArtMap.Utils.Reflection;
 public final class Database {
     private final String DATABASE_ACCESS_ERROR = "Error accessing database, try using /artmap reload.";
     private final ArtTable artworks;
-    private final MapTable maps;
+    private final SearchTable search;
     private final BukkitRunnable AUTO_SAVE = new BukkitRunnable() {
         @Override
         public void run() {
@@ -34,9 +34,9 @@ public final class Database {
         }
     };
 
-    public Database(JavaPlugin plugin, SQLiteDatabase database, ArtTable artworks, MapTable maps) {
+    public Database(JavaPlugin plugin, SQLiteDatabase database, ArtTable artworks, SearchTable search) {
         this.artworks = artworks;
-        this.maps = maps;
+        this.search = search;
         int delay = ArtMap.getConfiguration().ARTWORK_AUTO_SAVE;
         AUTO_SAVE.runTaskTimerAsynchronously(plugin, delay, delay);
     }
@@ -44,17 +44,10 @@ public final class Database {
     public static Database build(JavaPlugin plugin) {
         SQLiteDatabase database;
         ArtTable artworks;
-        MapTable maps;
-        database = new SQLiteDatabase(new File(plugin.getDataFolder(), "Art.db"));
-        if (!database.initialize(artworks = new ArtTable(database), maps = new MapTable(database))) return null;
-        Database db = new Database(plugin, database, artworks, maps);
-        /*
-        try {
-            db.loadArtworks();
-        } catch (Exception e) {
-            ErrorLogger.log(e, "Error Loading ArtMap Database");
-            return null;
-        }*/
+        SearchTable search;
+        database = new SQLiteDatabase(new File(plugin.getDataFolder(), "Art_v4.db"));
+        if (!database.initialize(artworks = new ArtTable(database), search = new SearchTable(database))) return null;
+        Database db = new Database(plugin, database, artworks, search);
         return db;
     }
 
@@ -183,8 +176,8 @@ public final class Database {
         return artworks;
     }
 
-    public MapTable getMapTable() {
-        return maps;
+    public SearchTable getSearchTable() {
+        return search;
     }
 
     public void close() {
