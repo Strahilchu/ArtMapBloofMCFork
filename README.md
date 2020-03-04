@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Supported Versions:
 * Spigot/Paper 1.15.2, 1.14.4, 1.13.2 - Master Branch
 * Spigot/Paper 1.8.8 - 1.12.2 - 1.12 Branch
@@ -86,20 +87,19 @@ Version 4 is not compatible with version 3's artwork database.  Please export th
 ## Release 4.0.0-SNAPSHOT
 * Very early work and will change frequently!
 
+=======
+>>>>>>> Rebase to 3.4.2
 ### Features
 * Custom easel entity
 * Basic filter for artwork titles
 * Asynchronous protocol handling
 * List & preview system to view artworks
 
-<<<<<<< HEAD
-=======
 ### Supported Versions:
 * Spigot 1.13.2 - 1.15.2  - master 
 * Spigot 1.13.2 - 1.15.2  - release-3.0.0 Branch
 * Spigot 1.8.8 - 1.12.2   - 1.12 Branch
 
->>>>>>> Table updates in progress
 ### Permissions Nodes
 * artmap.artist - allows players to use artmap
 * artmap.admin - grants administrative override/deletion priveleges
