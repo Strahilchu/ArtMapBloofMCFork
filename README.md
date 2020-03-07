@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Supported Versions:
 * Spigot/Paper 1.15.2, 1.14.4, 1.13.2 - Master Branch
 * Spigot/Paper 1.8.8 - 1.12.2 - 1.12 Branch
@@ -89,6 +90,8 @@ Version 4 is not compatible with version 3's artwork database.  Please export th
 
 =======
 >>>>>>> Rebase to 3.4.2
+=======
+>>>>>>> c0095dfc0dd08fc4a1b5285efbe885a031a69cc8
 ### Features
 * Custom easel entity
 * Basic filter for artwork titles
