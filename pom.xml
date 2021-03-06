@@ -8,8 +8,10 @@
 	<version>2.7.4</version>
 	<description>Make pixel art!</description>
 	<packaging>pom</packaging>
-	<profiles>
-	</profiles>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<modules>
 		<module>DataTables</module>
 		<module>InvMenu</module>

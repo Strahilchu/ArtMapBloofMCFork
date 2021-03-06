@@ -24,6 +24,7 @@ import me.Fupery.ArtMap.Heads.Heads;
 import me.Fupery.ArtMap.IO.ErrorLogger;
 import me.Fupery.ArtMap.IO.PixelTableManager;
 import me.Fupery.ArtMap.IO.Database.Database;
+import me.Fupery.ArtMap.IO.Database.Map;
 import me.Fupery.ArtMap.IO.Legacy.OldDatabaseConverter;
 import me.Fupery.ArtMap.IO.Protocol.ProtocolHandler;
 import me.Fupery.ArtMap.IO.Protocol.Channel.ChannelCacheManager;
@@ -167,6 +168,9 @@ public class ArtMap extends JavaPlugin {
 				this.initHeadCache();
 			}, ArtMap.getConfiguration().HEAD_PREFETCH_DELAY);
 		}
+
+		short currentMapCount = Map.getNextMapId();
+		this.getLogger().info("Next map id: " + currentMapCount);
 
 		disabled = false;
 	}
