@@ -57,7 +57,7 @@ public class ProtocolLibReceiver extends PacketReceiver {
                     return new PacketInteract(
                     nmsAction.toString().equals("b") ? InteractType.ATTACK : InteractType.INTERACT);
                 } catch (Exception e1) {
-                    e1.printStackTrace();
+                    ArtMap.instance().getLogger().log(Level.SEVERE, "Error reading USE_ENTITY packet!", e1);
                 }
             }
         }
