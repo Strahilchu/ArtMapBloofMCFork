@@ -49,14 +49,17 @@ public class ProtocolLibReceiver extends PacketReceiver {
             return new PacketInteract(
                 action == EnumWrappers.EntityUseAction.ATTACK ? InteractType.ATTACK : InteractType.INTERACT);
             } catch (Exception e) {
-                //Then we must be on 1.17
+                //Then we must be on 1.17+
                 try {
                     Object enumEntityUseActionObject = packet.getModifier().read(1);
                     Method method = enumEntityUseActionObject.getClass().getMethod("a");
                     method.setAccessible(true);
                     Object nmsAction = method.invoke(enumEntityUseActionObject);
                     return new PacketInteract(
-                    nmsAction.toString().equals("b") ? InteractType.ATTACK : InteractType.INTERACT);
+						nmsAction.toString().equals("ATTACK") ||	// 1.17.1
+						nmsAction.toString().equals("b") ?			// 1.17
+							InteractType.ATTACK : InteractType.INTERACT
+					);
                 } catch (Exception e1) {
                     ArtMap.instance().getLogger().log(Level.SEVERE, "Error reading USE_ENTITY packet!", e1);
                 }
