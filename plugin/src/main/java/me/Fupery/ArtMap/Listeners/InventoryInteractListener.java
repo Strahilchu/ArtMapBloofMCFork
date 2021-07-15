@@ -38,6 +38,12 @@ class InventoryInteractListener implements RegisteredListener {
                 event.setCancelled(true);
             }
         }
+        // lock armor slots while at the easel
+        else if (ArtMap.instance().getArtistHandler().getCurrentSession((Player) event.getWhoClicked()) != null &&
+            event.getRawSlot() >= 5 && event.getRawSlot() <= 8){
+            event.setCancelled(true);
+        }
+
     }
 
     @EventHandler
