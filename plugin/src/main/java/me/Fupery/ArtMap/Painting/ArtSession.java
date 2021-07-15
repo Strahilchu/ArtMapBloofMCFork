@@ -141,6 +141,9 @@ public class ArtSession implements IArtSession {
             }
             player.getInventory().setItemInOffHand(hotbar[9]);
         }
+		else {
+            player.getInventory().setItemInOffHand(null);
+		}
     }
 
     public void nextKitPage(Player player) {
