@@ -30,7 +30,8 @@ class PlayerCommandPreListener implements RegisteredListener {
 	
 	@EventHandler
 	public void onCommandPre(PlayerCommandPreprocessEvent event){
-		if(ArtMap.instance().getArtistHandler().getCurrentSession(event.getPlayer()) != null){
+		if(ArtMap.instance().getArtistHandler().getCurrentSession(event.getPlayer()) != null &&
+			ArtMap.instance().getArtistHandler().getCurrentSession(event.getPlayer()).isInArtKit()){
 			String message = event.getMessage().toLowerCase();
 			if(message.startsWith("/") && blacklist.contains(message.substring(1))) {
 				event.setCancelled​(true);
