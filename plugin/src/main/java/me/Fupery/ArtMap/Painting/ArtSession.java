@@ -211,7 +211,7 @@ public class ArtSession implements IArtSession {
 
     public void end(Player player) throws SQLException, IOException {
         try {
-            player.leaveVehicle();
+            player.teleport(player.getLocation().add(0, 0.25, 0 )); //player.leaveVehicle();
             removeKit(player);
             easel.removeUser();
             canvas.stop();
