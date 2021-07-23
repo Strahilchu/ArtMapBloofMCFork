@@ -177,7 +177,11 @@ public class Reflection {
 
         try {
             Object worldMap = getField(mapView, "worldMap");
-            colors = (byte[]) getField(worldMap, "colors");
+            try {
+                colors = (byte[]) getField(worldMap, "colors");
+            } catch (NoSuchFieldException e) {
+                colors = (byte[]) getField(worldMap, "g");
+            }
 
         } catch (NoSuchFieldException | SecurityException
                 | IllegalArgumentException | IllegalAccessException e) {
@@ -194,8 +198,11 @@ public class Reflection {
             mapView.setCenterZ(-999999);
             
             Object worldMap = getField(mapView, "worldMap");
-            setField(worldMap, "colors", colors);
-
+            try {
+                colors = (byte[]) getField(worldMap, "colors");
+            } catch (NoSuchFieldException e) {
+                colors = (byte[]) getField(worldMap, "g");
+            }
             mapView.setScale(MapView.Scale.FARTHEST);
     }
 }
