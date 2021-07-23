@@ -84,6 +84,12 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+    		<id>codemc-snapshots</id>
+    		<url>https://repo.codemc.io/repository/maven-snapshots/</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>com.gitlab.blockstack</groupId>
@@ -290,4 +296,10 @@
 			<url>https://nexus.troytech.info/repository/BlockStack/</url>
 		</repository>
 	</distributionManagement>
+	<pluginRepositories>
+	    <pluginRepository>
+			<id>apache.snapshots</id>
+			<url>https://repository.apache.org/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>
