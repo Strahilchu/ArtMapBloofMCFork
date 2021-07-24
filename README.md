@@ -3,7 +3,7 @@
 We did a very quick test and it looks like everything works.  But as always keep backups.
 
 ### Supported Versions:
-* Spigot/Paper 1.16.1,  1.15.2, 1.14.4, 1.13.2 - Master Branch
+* Spigot/Paper 1.17.1, 1.16.1,  1.15.2, 1.14.4, 1.13.2 - Master Branch
 * Spigot/Paper 1.8.8 - 1.12.2 - 1.12 Branch
 
 ### Features
