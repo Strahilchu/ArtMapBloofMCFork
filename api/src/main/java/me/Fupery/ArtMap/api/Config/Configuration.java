@@ -21,7 +21,7 @@ public class Configuration {
     public final boolean HEAD_FETCH_MOJANG;
     public final int     INK_USES;
     public final boolean LIMITED_INK_USES;
-	public final String BLACKLIST;
+	public final String  BLACKLIST;
 
     public Configuration(IArtMap plugin) {
         FileConfiguration configuration = plugin.getConfig();

@@ -39,7 +39,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.2.1</version>
+				<version>3.3.0-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -52,7 +52,7 @@
 								<includes>
 									<include>com.github.Fupery:*</include>
 									<include>me.Fupery:DataTables:*</include>
-									<include>com.github.WesJD.AnvilGUI:anvilgui:*</include>
+									<include>net.wesjd:anvilgui:*</include>
 									<include>com.gitlab.blockstack:*:*</include>
 								</includes>
 								<excludes>
@@ -71,9 +71,29 @@
 				</executions>
 			</plugin>
 			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <version>3.8.1</version>
+			    <configuration>
+			    	<fork>true</fork>
+			        <compilerArgs>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+			            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED</arg>
+			        </compilerArgs>
+			    </configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.5</version>
+				<version>0.8.7</version>
 				<executions>
 					<execution>
 						<goals>
@@ -92,6 +112,12 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+    		<id>codemc-snapshots</id>
+    		<url>https://repo.codemc.io/repository/maven-snapshots/</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>com.gitlab.blockstack</groupId>
@@ -122,9 +148,9 @@
             <scope>provided</scope>
         </dependency>
 		<dependency>
-			<groupId>com.github.WesJD</groupId>
-			<artifactId>AnvilGUI</artifactId>
-			<version>5d0f592c63</version>
+			<groupId>net.wesjd</groupId>
+    		<artifactId>anvilgui</artifactId>
+    		<version>1.5.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 		<!--Artmap Spigot/Paper version compatibility-->
@@ -298,4 +324,10 @@
 			<url>https://nexus.troytech.info/repository/BlockStack/</url>
 		</repository>
 	</distributionManagement>
+	<pluginRepositories>
+	    <pluginRepository>
+			<id>apache.snapshots</id>
+			<url>https://repository.apache.org/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>
