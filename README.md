@@ -1,5 +1,5 @@
 ![ArtMap](http://puu.sh/kRWAF/2c81256338.jpg)
-### 1.16.1 Support
+### 1.17.1 Support
 We did a very quick test and it looks like everything works.  But as always keep backups.
 
 ### Supported Versions:
