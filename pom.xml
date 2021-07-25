@@ -82,10 +82,6 @@
 			<name>Mojang's Repository</name>
 			<url>https://libraries.minecraft.net/</url>
 		</repository>
-		<repository>
-			<id>extendedclip-repo</id>
-			<url>http://repo.extendedclip.com/content/repositories/public/</url>
-		</repository>
 	</repositories>
 
 	<dependencies>
